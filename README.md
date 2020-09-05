@@ -22,4 +22,4 @@ cd vimrc
 cp ./_vimrc ~/
 
 #### vim
-:call dein#install()
+:call dein#install() # 自動でインストールされるので必要ないかも。
