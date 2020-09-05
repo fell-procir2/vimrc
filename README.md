@@ -18,6 +18,7 @@ Set-ExecutionPolicy Restricted
 git clone https://github.com/fell-procir2/vimrc.git
 
 #### %userprofile%以下に_vimrcをコピー。
+cd vimrc
 cp ./_vimrc ~/
 
 #### vim
