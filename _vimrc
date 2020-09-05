@@ -15,7 +15,7 @@ if dein#load_state('~/.cache/dein')
     call dein#add('roxma/vim-hug-neovim-rpc')
   endif
   "ここに入れたいプラグインを記入
-  call dein#add('cohama/lexima.vim')
+  call dein#add('cohama/lexima.vim') "カッコ補完
 
   call dein#end()
   call dein#save_state()
@@ -42,7 +42,6 @@ set nobackup " バックアップファイルを作らない
 set noswapfile " スワップファイルを作らない
 set noundofile "アンドゥファイルを作らない
 
-
 set expandtab " タブ入力を複数の空白入力に置き換える
 set tabstop=4 " 画面上でタブ文字が占める幅
 set softtabstop=4 " 連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
@@ -60,7 +59,6 @@ nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
 
 set whichwrap=b,s,h,l,<,>,[,],~ " カーソルの左右移動で行末から次の行の行頭への移動が可能になる
 set number " 行番号を表示
-"set cursorline " カーソルラインをハイライト
 
 " 行が折り返し表示されていた場合、行単位ではなく表示行単位でカーソルを移動する
 nnoremap j gj
@@ -68,26 +66,9 @@ nnoremap k gk
 nnoremap <down> gj
 nnoremap <up> gk
 
-"" カッコ補完
-"inoremap { {}<Left>
-"inoremap {<Enter> {}<Left><CR><ESC><S-o>
-"inoremap () ()
-"inoremap ( ()<ESC>i
-"inoremap (<Enter> ()<Left><CR><ESC><S-o>
-"inoremap [ []<ESC>i
-"inoremap [<Enter> []<Left><CR><ESC><S-o>
-"
-""補完
-"inoremap ' ''<ESC>i
-"inoremap '' ''
-"inoremap " ""<ESC>i
-"inoremap "" ""
-"inoremap < <><ESC>i
-
-"囲いから移動
+" 挿入モードで右へカーソル移動
 inoremap <C-f> <Right>
 inoremap <C-f><C-f> <ESC><S-a>
-
 " バックスペースキーの有効化
 set backspace=indent,eol,start
 " バックスペースがWSLでBSが使えなくなり追加_20191109
@@ -138,5 +119,3 @@ fun! SetupCommandAlias(from, to)
 endfun
 
 cnoreabbrev tn tabnew
-"set relativenumber " 相対行番号表示
-
