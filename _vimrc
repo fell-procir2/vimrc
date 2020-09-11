@@ -16,7 +16,7 @@ if dein#load_state('~/.cache/dein')
   endif
   "ここに入れたいプラグインを記入
   call dein#add('cohama/lexima.vim') "カッコ補完
-
+  call dein#add('preservim/nerdtree')
   call dein#end()
   call dein#save_state()
 endif
@@ -37,6 +37,10 @@ if dein#check_install()
   call dein#install()
 endif
 "End dein Scripts-------------------------
+
+"script shortcut
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 set nobackup " バックアップファイルを作らない
 set noswapfile " スワップファイルを作らない
