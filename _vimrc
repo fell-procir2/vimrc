@@ -70,9 +70,12 @@ nnoremap k gk
 nnoremap <down> gj
 nnoremap <up> gk
 
+" カッコ補完
+inoremap < <><ESC>i
 " 挿入モードで右へカーソル移動
-inoremap <C-f> <Right>
-inoremap <C-f><C-f> <ESC><S-a>
+inoremap <C-f><C-f> <C-g>U<ESC><S-a>
+inoremap <C-f> <C-r>=lexima#insmode#leave(1, '<LT>C-G>U<LT>RIGHT>')<CR>
+"
 " バックスペースキーの有効化
 set backspace=indent,eol,start
 " バックスペースがWSLでBSが使えなくなり追加_20191109
